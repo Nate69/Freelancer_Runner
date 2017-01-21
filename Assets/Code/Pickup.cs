@@ -14,11 +14,19 @@ public class Pickup : MonoBehaviour {
     }
 	void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Item")
+        if (other.gameObject.tag == "HP^PickUp")
         {
             GameObject Text = GameObject.Find("Text");
             HealthScript targetScript = Text.GetComponent<HealthScript>();
             targetScript.Health += 10;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "DMGPickUp")
+        {
+            GameObject Text = GameObject.Find("Text");
+            HealthScript targetScript = Text.GetComponent<HealthScript>();
+            targetScript.Health -= 20;
             Destroy(other.gameObject);
         }
     }
