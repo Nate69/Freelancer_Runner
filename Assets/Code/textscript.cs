@@ -19,7 +19,7 @@ public class textscript : MonoBehaviour {
         if (Time.time > nextUsage)
         {
             nextUsage = Time.time + textDelay;
-            TextBox.text = FrenchTalk[Random.Range(0, 5)];
+            TextBox.text = FrenchTalk[Random.Range(0, 15)];
         }
 	}
 }
